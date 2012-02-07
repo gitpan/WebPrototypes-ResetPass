@@ -3,7 +3,7 @@ use warnings;
 
 package WebPrototypes::ResetPass;
 BEGIN {
-  $WebPrototypes::ResetPass::VERSION = '0.001';
+  $WebPrototypes::ResetPass::VERSION = '0.002';
 }
 use parent qw(Plack::Component);
 use Plack::Request;
@@ -92,7 +92,7 @@ sub _send_pass_token {
     );
     my $reset_url = URI->new( $my_server );
     $reset_url->path( $env->{SCRIPT_NAME} . '/reset' );
-    $reset_url->query_form( name => $username, pass_token => $pass_token );
+    $reset_url->query_form( name => $username, token => $pass_token );
     $self->send_mail( $self->build_email( $email, $reset_url ), $pass_token );
 }
 
@@ -138,7 +138,7 @@ WebPrototypes::ResetPass - (Experimental) Plack application for sending a 'Reset
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 SYNOPSIS
 

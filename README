@@ -1,7 +1,7 @@
 
 
 This archive contains the distribution WebPrototypes-ResetPass,
-version 0.001:
+version 0.002:
 
   (Experimental) Plack application for sending a 'Reset password link' via email
 

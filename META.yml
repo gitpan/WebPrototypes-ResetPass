@@ -30,4 +30,4 @@ requires:
   parent: 0
   perl: 5.0100
 resources: {}
-version: 0.001
+version: 0.002
